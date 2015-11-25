@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125011741) do
+ActiveRecord::Schema.define(version: 20151125012527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20151125011741) do
 
   add_index "homeworks", ["students_id"], name: "index_homeworks_on_students_id", using: :btree
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "project_submission"
+    t.string   "link"
+    t.string   "teacher_assessment"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.string   "github_username"
@@ -43,6 +52,14 @@ ActiveRecord::Schema.define(version: 20151125011741) do
   end
 
   add_index "students", ["cohort_id"], name: "index_students_on_cohort_id", using: :btree
+
+  create_table "students_projects", id: false, force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "project_id"
+  end
+
+  add_index "students_projects", ["project_id"], name: "index_students_projects_on_project_id", using: :btree
+  add_index "students_projects", ["student_id"], name: "index_students_projects_on_student_id", using: :btree
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"

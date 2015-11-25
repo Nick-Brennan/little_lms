@@ -8,5 +8,10 @@ class CreateProjects < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    create_table :students_projects, id: false do |t|
+      t.belongs_to :student, index: true
+      t.belongs_to :project, index: true
+    end 
   end
 end
