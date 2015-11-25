@@ -4,6 +4,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :name
       t.string :github_username
       t.integer :cohort_id
+      t.belongs_to :cohort, index:true
 
       t.timestamps null: false
     end
