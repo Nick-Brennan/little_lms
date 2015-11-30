@@ -3,6 +3,12 @@
 	<title></title>
 </head>
 <body>
-cohort show page
+<h1>cohort show page</h1>
+<ul>
+<% @cohort.each do |student|%>
+<li><%= student.name%> </li>
+<% end %>
+</ul>
+
 </body>
 </html>
