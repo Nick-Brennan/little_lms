@@ -1,5 +1,6 @@
 
 class CohortController < ApplicationController
+include CohortHelper
 
 def show
 	klass = Cohort.find(params[:id])
@@ -17,8 +18,9 @@ def attendance
 end
 
 def homework
-
 	render :homework
 end
+
+
 
 end
