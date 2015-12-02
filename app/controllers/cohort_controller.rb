@@ -1,6 +1,10 @@
 
 class CohortController < ApplicationController
-include CohortHelper
+
+def index
+	@cohort = Cohort.find(params[:id])
+	render :index
+end
 
 def show
 	klass = Cohort.find(params[:id])

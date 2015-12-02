@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: "welcome#index"
+  get 'cohort/:id', to: "cohort#index"
   get 'cohort/:id/show', to: "cohort#show"
   get 'cohort/:id/data', to: "cohort#data"
   get 'cohort/:id/attendance', to: "cohort#attendance"
