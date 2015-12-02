@@ -5,6 +5,7 @@ def show
 end
 
 def comprehension
+	@student = Student.find(params[:id])
 	render :comp
 end
 
