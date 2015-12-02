@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get 'student/:id/show', to: "student#show"
   get 'student/:id/comp', to: "student#comprehension"
   get 'student/:id/projects', to: "student#projects"
-
+  post 'cohort/:id/attendance/:sid', to: "cohort#attendance_log"
 
 end
