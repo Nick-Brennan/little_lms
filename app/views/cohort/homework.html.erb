@@ -4,5 +4,23 @@
 </head>
 <body>
 <h1>cohort Homework page</h1>
+<ul>
+<% @cohort.each do |student|%>
+<li>
+	<div class="row">
+		<div class="col-md-4">
+			<%= student.name%> 
+		</div>
+		<div class="col-md-4">
+			<!-- mock up button that will change color. -->
+			<p> 3/5 reported comprehension</p>
+		</div>
+		<div class="col-md-4">
+			<p> Rails is the worst!!! </p>
+		</div>
+	</div>
+</li>
+<% end %>
+</ul>
 </body>
 </html>

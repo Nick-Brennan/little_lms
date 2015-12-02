@@ -24,6 +24,8 @@ def attendance
 end
 
 def homework
+	klass = Cohort.find(params[:id])
+	@cohort = klass.students
 	render :homework
 end
 
