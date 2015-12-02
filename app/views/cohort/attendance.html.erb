@@ -1,8 +1,39 @@
 <html>
 <head>
+<script src="js/jquery.js"></script> 
+<script src="js/moment.min.js"></script> 
+<script src="js/combodate.js"></script> 
 	<title></title>
 </head>
 <body>
- cohort Attendance Page
+ <div class="container-fluid">
+<h1>cohort attendance page</h1>
+ <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" value="09-01-2013">
+<script>
+$(function(){
+    $('#date').combodate();    
+});
+</script>
+<ul>
+<% @cohort.each do |student|%>
+<li>
+	<div class="row">
+		<div class="col-md-4">
+			<%= student.name%> 
+		</div>
+		<div class="col-md-4">
+			<!-- mock up button that will change color. -->
+			<button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-ok"></span></a>
+			</button>
+			<button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-remove"></span></a>
+			</button>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</li>
+<% end %>
+</ul>
+</div>
 </body>
 </html>
