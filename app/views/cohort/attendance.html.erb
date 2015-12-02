@@ -1,19 +1,13 @@
 <html>
 <head>
-<script src="js/jquery.js"></script> 
-<script src="js/moment.min.js"></script> 
-<script src="js/combodate.js"></script> 
+ 
 	<title></title>
 </head>
 <body>
  <div class="container-fluid">
 <h1>cohort attendance page</h1>
- <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" value="09-01-2013">
-<script>
-$(function(){
-    $('#date').combodate();    
-});
-</script>
+ <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" placeholder="12-01-2015">
+<button type="button" class="btn btn-success">All Here</button>
 <ul>
 <% @cohort.each do |student|%>
 <li>
