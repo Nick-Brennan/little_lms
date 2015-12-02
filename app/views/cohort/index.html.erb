@@ -3,11 +3,13 @@
 	<title></title>
 </head>
 <body>
+	<div class="container-fluid">
 	<h1> Cohort Splash Page </h1>
+	<hr>
 	<a><%= link_to 'Students', "/cohort/#{@cohort.id}/show", :class => "btn btn-success" %></a>
 	<a><%= link_to 'Data', "/cohort/#{@cohort.id}/data", :class => "btn btn-success" %></a>
 	<a><%= link_to 'Attendance', "/cohort/#{@cohort.id}/attendance", :class => "btn btn-success" %></a>
 
-
+</div>
 </body>
 </html>
