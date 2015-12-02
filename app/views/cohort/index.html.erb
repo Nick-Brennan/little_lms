@@ -5,6 +5,9 @@
 <body>
 	<h1> Cohort Splash Page </h1>
 	<a><%= link_to 'Students', "/cohort/#{@cohort.id}/show", :class => "btn btn-success" %></a>
+	<a><%= link_to 'Data', "/cohort/#{@cohort.id}/data", :class => "btn btn-success" %></a>
+	<a><%= link_to 'Attendance', "/cohort/#{@cohort.id}/attendance", :class => "btn btn-success" %></a>
+
 
 </body>
 </html>
