@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 20151126040141) do
     t.datetime "updated_at",         null: false
   end
 
+  create_table "projects_students", id: false, force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "project_id"
+  end
+
+  add_index "projects_students", ["project_id"], name: "index_projects_students_on_project_id", using: :btree
+  add_index "projects_students", ["student_id"], name: "index_projects_students_on_student_id", using: :btree
+
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.string   "github_username"
@@ -64,14 +72,6 @@ ActiveRecord::Schema.define(version: 20151126040141) do
   end
 
   add_index "students", ["cohort_id"], name: "index_students_on_cohort_id", using: :btree
-
-  create_table "students_projects", id: false, force: :cascade do |t|
-    t.integer "student_id"
-    t.integer "project_id"
-  end
-
-  add_index "students_projects", ["project_id"], name: "index_students_projects_on_project_id", using: :btree
-  add_index "students_projects", ["student_id"], name: "index_students_projects_on_student_id", using: :btree
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
