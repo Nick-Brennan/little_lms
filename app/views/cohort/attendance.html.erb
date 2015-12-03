@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+ <div class="container-fluid">
+<h1>cohort attendance page</h1>
+ <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" placeholder="12-01-2015">
+<button type="button" class="btn btn-success">All Here</button>
+<ul>
+<% @cohort.each do |student|%>
+<li>
+	<div class="row">
+		<div class="col-md-4">
+			<%= student.name%> 
+		</div>
+		<div class="col-md-4">
+			<!-- mock up button that will change color. -->
+			<button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-ok"></span></a>
+			</button>
+			<button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-remove"></span></a>
+			</button>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</li>
+<% end %>
+</ul>
+</div>
+</body>
+</html>
