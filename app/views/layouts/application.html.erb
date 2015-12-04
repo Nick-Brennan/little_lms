@@ -10,7 +10,7 @@
 <script src="/assets/c3.min.js"></script>
 </head>
 <body>
-
+<%= render "partials/nav" unless @disable_nav %>
 <%= yield %>
 
 </body>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="navbar-header">
+    <% if controller?("cohort") && action?("index")%> 
+     <a><%= link_to 'Students', cohort_show_path, :class => "btn btn-success" %></a>
+     <a><%= link_to 'Data', cohor_data_path, :class => "btn btn-success" %></a>
+     <a><%= link_to 'Attendance', cohort_att_path, :class => "btn btn-success" %></a>
+     <%end%>
+     <%if controller?("cohort") && action?("show", "data", "attendance")%>
+     <a><%=link_to_if !current_page?, "Cohort's Home", cohort_path, :class => "btn btn-success" %></a>
+     <a><%= link_to 'Students', cohort_show_path, :class => "btn btn-success" %></a>
+     <a><%= link_to 'Data', cohor_data_path, :class => "btn btn-success" %></a>
+     <a><%= link_to 'Attendance', cohort_att_path, :class => "btn btn-success" %></a>
+     <%end%>
+      </div>
+  </div>
+</div>
