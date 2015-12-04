@@ -1,5 +1,5 @@
-
 class CohortController < ApplicationController
+
 
 def index
 	@cohort = Cohort.find(params[:id])
@@ -8,23 +8,26 @@ end
 
 def show
 	klass = Cohort.find(params[:id])
+	@cohort_id = klass
 	@cohort = klass.students
 	render :show
 end
 
 def data
-
+    @cohort = Cohort.find(params[:id])
 	render :data
 end
 
 def attendance
 	klass = Cohort.find(params[:id])
+	@cohort_id = klass
 	@cohort = klass.students
 	render :attendance
 end
 
 def homework
 	klass = Cohort.find(params[:id])
+	@cohort_id = klass
 	@cohort = klass.students
 	render :homework
 end

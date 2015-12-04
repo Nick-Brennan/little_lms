@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
   root to: "welcome#index"
-  get 'cohort/:id', to: "cohort#index"
-  get 'cohort/:id/show', to: "cohort#show"
-  get 'cohort/:id/data', to: "cohort#data"
-  get 'cohort/:id/attendance', to: "cohort#attendance"
-  get 'cohort/:id/homework/:hid/show', to: "cohort#homework"
+  get 'cohort/:id', to: "cohort#index", as:"cohort"
+  get 'cohort/:id/show', to: "cohort#show", as: "cohort_show"
+  get 'cohort/:id/data', to: "cohort#data", as: "cohor_data"
+  get 'cohort/:id/attendance', to: "cohort#attendance" , as: "cohort_att"
+  get 'cohort/:id/homework/:hid/show', to: "cohort#homework", as: "cohort_hw"
   get 'student/:id/show', to: "student#show"
   get 'student/:id/comp', to: "student#comprehension"
   get 'student/:id/projects', to: "student#projects"
