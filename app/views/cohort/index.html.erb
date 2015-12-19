@@ -7,7 +7,7 @@
 	<h1> Available Cohorts </h1>
 	<ul> 
 		<% @cohorts.each do |cohort| %>
-		<li><h2><%=link_to "Cohort #{cohort.name}", cohort_show_path(cohort.id) %></h2></li>
+		<li><h2><%=link_to "Cohort #{cohort.name}", cohort_show_path(cohort.id), :"data-no-turbolink" => true %></h2></li>
 		<%end%>
 	</ul>
 	<div>

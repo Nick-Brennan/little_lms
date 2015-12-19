@@ -16,9 +16,9 @@ def new
 end
 
 def show
-	klass = Cohort.find(params[:id])
-	@cohort_id = klass
-	@cohort = klass.students
+	@klass = Cohort.find(params[:id])
+	@cohort_id = @klass.id
+	@cohort = @klass.students
 	render :show
 end
 
