@@ -3,7 +3,16 @@ class CohortController < ApplicationController
 
 def index
 	@cohorts = Cohort.all()
+	@cohort = Cohort.new
 	render :index
+end
+
+def new
+      cohort_params = params.require(:cohort).permit(:name, :subject)
+      p cohort_params
+ 	  cohort = Cohort.create(cohort_params)
+      redirect_to "/cohort/#{cohort.id}/show"
+    
 end
 
 def show
@@ -20,7 +29,7 @@ end
 
 def attendance
 	klass = Cohort.find(params[:id])
-	@cohort_id = klass
+	@cohort_id = klass.id
 	@cohort = klass.students
 	render :attendance
 end

@@ -11,10 +11,10 @@
 		<%end%>
 	</ul>
 	<div>
-		<%= form_for @cohort, url: "/cohort/new", method: "post" do  |f| %>
-						<%= f.text_field :title, :placeholder => "Cohort Number" %><br>
-						<%= f.text_area :content, :placeholder => "Cohort Type" %><br>
-						<%= f.submit "Add post" %>
+		<%= form_for @cohort, url: "/cohort/new" do  |f| %>
+						<%= f.text_field :name, :placeholder => "Cohort Number" %><br>
+						<%= f.text_area :type, :placeholder => "Cohort Type" %><br>
+						<%= f.submit "Add cohort" %>
 					<% end %>
 	</div>
    </div>
