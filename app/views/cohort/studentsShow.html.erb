@@ -1,0 +1,29 @@
+<h1>cohort/Student show page</h1>
+<ul>
+<% @cohort.each do |student|%>
+<li>
+	<div class="row">
+		<div class="col-md-4">
+
+			<h3><%= student.name%></h3> 
+		</div>
+		<div class="col-md-4">
+			<!-- mock up button that will change color. -->
+			<button type="button" class="btn btn-success">Good
+			</button>
+		</div>
+		<div class="col-md-4">
+			Flag message in here
+		</div>
+	</div>
+</li>
+<% end %>
+</ul>
+<div>
+		<%= form_for @student, url: "/cohort/#{@cohort_id}/student/new" do  |f| %>
+						<%= f.text_field :name, :placeholder => "name" %><br>
+						<%= f.text_field :github_username, :placeholder => "GitHub Name" %><br>
+						<%= f.hidden_field :cohort_id, :value => @cohort_id  %>
+						<%= f.submit "Add New Student" %>
+					<% end %>
+	</div>

@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get 'student/:id/projects', to: "student#projects"
   post 'cohort/:id/attendance/:sid', to: "cohort#attendance_log"
   post 'cohort/new', to: "cohort#new"
+  get 'cohort/:id/students/show', to: "cohort#studentsShow"
+  post 'cohort/:id/student/new', to: "student#new"
 end

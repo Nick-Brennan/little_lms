@@ -16,10 +16,7 @@ def new
 end
 
 def show
-	klass = Cohort.find(params[:id])
-	@cohort_id = klass
-	@cohort = klass.students
-	render :show
+
 end
 
 def data
@@ -46,6 +43,15 @@ def attendance_log
 	# params[:sid] will be student_id
 	# will write a check for :sid == "all" to update all students
 end
+
+def studentsShow
+	@student = Student.new
+	klass = Cohort.find(params[:id])
+	@cohort_id = klass.id
+	@cohort = klass.students
+	render :studentsShow
+end
+
 
 
 
