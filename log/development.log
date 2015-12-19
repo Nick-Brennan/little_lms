@@ -17557,3 +17557,942 @@ Processing by CohortController#data as HTML
   Rendered cohort/data.html.erb within layouts/application (0.2ms)
   Rendered partials/_nav.html.erb (0.9ms)
 Completed 200 OK in 494ms (Views: 491.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-12-19 11:32:34 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+  Rendered partials/_nav.html.erb (3.3ms)
+Completed 200 OK in 533ms (Views: 518.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 11:32:36 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 11:32:36 -0800
+
+
+Started GET "/cohort/1/show" for ::1 at 2015-12-19 11:32:42 -0800
+Processing by CohortController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCohort Load (1.9ms)[0m  SELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (2.1ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."cohort_id" = $1[0m  [["cohort_id", 1]]
+  Rendered cohort/show.html.erb within layouts/application (18.4ms)
+  Rendered partials/_nav.html.erb (0.5ms)
+Completed 200 OK in 205ms (Views: 131.7ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 11:32:42 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 11:32:42 -0800
+
+
+Started GET "/cohort/1" for ::1 at 2015-12-19 11:33:11 -0800
+Processing by CohortController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCohort Load (0.4ms)[0m  SELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cohort/index.html.erb within layouts/application (1.6ms)
+  Rendered partials/_nav.html.erb (2.9ms)
+Completed 200 OK in 181ms (Views: 177.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cohort/1/data" for ::1 at 2015-12-19 11:33:12 -0800
+Processing by CohortController#data as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCohort Load (0.3ms)[0m  [1mSELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cohort/data.html.erb within layouts/application (0.6ms)
+  Rendered partials/_nav.html.erb (0.5ms)
+Completed 200 OK in 152ms (Views: 150.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-19 11:59:13 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+  Rendered partials/_nav.html.erb (2.4ms)
+Completed 200 OK in 562ms (Views: 552.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 11:59:15 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 11:59:15 -0800
+
+
+Started GET "/cohort/1" for ::1 at 2015-12-19 11:59:17 -0800
+Processing by CohortController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCohort Load (0.4ms)[0m  SELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cohort/index.html.erb within layouts/application (0.4ms)
+  Rendered partials/_nav.html.erb (1.6ms)
+Completed 200 OK in 200ms (Views: 167.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 11:59:18 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 11:59:18 -0800
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 11:59:19 -0800
+
+ActionController::RoutingError (No route matches [GET] "/cohort"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/J/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/J/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/J/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (121.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (75.9ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (166.1ms)
+
+
+Started GET "/cohort/index" for ::1 at 2015-12-19 11:59:24 -0800
+Processing by CohortController#index as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mCohort Load (0.6ms)[0m  [1mSELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Cohort with 'id'=index):
+  app/controllers/cohort_controller.rb:5:in `index'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.8ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.0ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (133.4ms)
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:02:57 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CohortController#index as HTML
+  Rendered cohort/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/J/Dev/little_lms/app/views/cohort/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+'.freeze;		 @cohorts each do |cohort| 
+         		              ^):
+  app/views/cohort/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  app/controllers/cohort_controller.rb:6:in `index'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (67.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (152.6ms)
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:03:34 -0800
+Processing by CohortController#index as HTML
+  Rendered cohort/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/J/Dev/little_lms/app/views/cohort/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+'.freeze;		 @cohorts each do |cohort| 
+         		              ^):
+  app/views/cohort/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  app/controllers/cohort_controller.rb:6:in `index'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.9ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (142.9ms)
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:04:10 -0800
+Processing by CohortController#index as HTML
+  [1m[35mCohort Load (2.0ms)[0m  SELECT "cohorts".* FROM "cohorts"
+  Rendered cohort/index.html.erb within layouts/application (27.8ms)
+  Rendered partials/_nav.html.erb (4.5ms)
+Completed 500 Internal Server Error in 748ms (ActiveRecord: 9.7ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"cohort"} missing required keys: [:id]):
+    3:     <div class="container">
+    4:       <div class="navbar-header">
+    5:         <%if controller?("cohort") && action?("index")%> 
+    6:          <a><%= link_to 'Students', cohort_show_path, :class => "btn btn-success" %></a>
+    7:          <a><%= link_to 'Data', cohor_data_path, :class => "btn btn-success" %></a>
+    8:          <a><%= link_to 'Attendance', cohort_att_path, :class => "btn btn-success" %></a>
+    9:            <%elsif controller?("cohort") && action?("show")%>
+  app/views/partials/_nav.html.erb:6:in `_app_views_partials__nav_html_erb__4326757274580633799_70267425080180'
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___2518135549442659405_70267446715160'
+  app/controllers/cohort_controller.rb:6:in `index'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.8ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (77.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (157.9ms)
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:06:38 -0800
+Processing by CohortController#index as HTML
+  [1m[36mCohort Load (1.0ms)[0m  [1mSELECT "cohorts".* FROM "cohorts"[0m
+  Rendered cohort/index.html.erb within layouts/application (25.2ms)
+  Rendered partials/_nav.html.erb (4.8ms)
+Completed 500 Internal Server Error in 313ms (ActiveRecord: 10.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"cohort"} missing required keys: [:id]):
+    3:     <div class="container">
+    4:       <div class="navbar-header">
+    5:        <!--  <%if controller?("cohort") && action?("index")%> 
+    6:          <a><%= link_to 'Students', cohort_show_path, :class => "btn btn-success" %></a>
+    7:          <a><%= link_to 'Data', cohort_data_path, :class => "btn btn-success" %></a>
+    8:          <a><%= link_to 'Attendance', cohort_att_path, :class => "btn btn-success" %></a>
+    9:            <%elsif controller?("cohort") && action?("show")%>
+  app/views/partials/_nav.html.erb:6:in `_app_views_partials__nav_html_erb__4326757274580633799_70267472871440'
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___2518135549442659405_70267446715160'
+  app/controllers/cohort_controller.rb:6:in `index'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (90.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (55.7ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (126.9ms)
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:06:50 -0800
+Processing by CohortController#index as HTML
+  [1m[35mCohort Load (0.3ms)[0m  SELECT "cohorts".* FROM "cohorts"
+  Rendered cohort/index.html.erb within layouts/application (0.8ms)
+  Rendered partials/_nav.html.erb (3.0ms)
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"cohort"} missing required keys: [:id]):
+    3:     <div class="container">
+    4:       <div class="navbar-header">
+    5:        <!--  <%if controller?("cohort") && action?("index")%> 
+    6:          <a><%= link_to 'Students', cohort_show_path, :class => "btn btn-success" %></a>
+    7:          <a><%= link_to 'Data', cohort_data_path, :class => "btn btn-success" %></a>
+    8:          <a><%= link_to 'Attendance', cohort_att_path, :class => "btn btn-success" %></a>
+    9:            <%elsif controller?("cohort") && action?("show")%>
+  app/views/partials/_nav.html.erb:6:in `_app_views_partials__nav_html_erb__4326757274580633799_70267426140180'
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___2518135549442659405_70267446715160'
+  app/controllers/cohort_controller.rb:6:in `index'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (66.0ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (145.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-19 12:06:53 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  Rendered partials/_nav.html.erb (0.2ms)
+Completed 200 OK in 134ms (Views: 133.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:06:54 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:06:54 -0800
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:07:00 -0800
+Processing by CohortController#index as HTML
+  [1m[36mCohort Load (0.4ms)[0m  [1mSELECT "cohorts".* FROM "cohorts"[0m
+  Rendered cohort/index.html.erb within layouts/application (1.3ms)
+  Rendered partials/_nav.html.erb (3.1ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"cohort"} missing required keys: [:id]):
+    3:     <div class="container">
+    4:       <div class="navbar-header">
+    5:        <!--  <%if controller?("cohort") && action?("index")%> 
+    6:          <a><%= link_to 'Students', cohort_show_path, :class => "btn btn-success" %></a>
+    7:          <a><%= link_to 'Data', cohort_data_path, :class => "btn btn-success" %></a>
+    8:          <a><%= link_to 'Attendance', cohort_att_path, :class => "btn btn-success" %></a>
+    9:            <%elsif controller?("cohort") && action?("show")%>
+  app/views/partials/_nav.html.erb:6:in `_app_views_partials__nav_html_erb__4326757274580633799_70267426140180'
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___2518135549442659405_70267446715160'
+  app/controllers/cohort_controller.rb:6:in `index'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.8ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.9ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (55.2ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (122.0ms)
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:07:46 -0800
+Processing by CohortController#index as HTML
+  [1m[35mCohort Load (0.3ms)[0m  SELECT "cohorts".* FROM "cohorts"
+  Rendered cohort/index.html.erb within layouts/application (1.7ms)
+  Rendered partials/_nav.html.erb (0.8ms)
+Completed 200 OK in 161ms (Views: 159.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:07:47 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:07:47 -0800
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:08:14 -0800
+Processing by CohortController#index as HTML
+  [1m[36mCohort Load (0.3ms)[0m  [1mSELECT "cohorts".* FROM "cohorts"[0m
+  Rendered cohort/index.html.erb within layouts/application (0.9ms)
+  Rendered partials/_nav.html.erb (3.0ms)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"cohort"} missing required keys: [:id]):
+    3:     <div class="container">
+    4:       <div class="navbar-header">
+    5:        <!--  <%if controller?("cohort") && action?("index")%> 
+    6:          <a><%= link_to 'Students', cohort_show_path, :class => "btn btn-success" %></a>
+    7:          <a><%= link_to 'Data', cohort_data_path, :class => "btn btn-success" %></a>
+    8:          <a><%= link_to 'Attendance', cohort_att_path, :class => "btn btn-success" %></a>
+    9:            <%elsif controller?("cohort") && action?("show")%>
+  app/views/partials/_nav.html.erb:6:in `_app_views_partials__nav_html_erb__4326757274580633799_70267432443560'
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___2518135549442659405_70267446715160'
+  app/controllers/cohort_controller.rb:6:in `index'
+
+
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.7ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/J/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (146.3ms)
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:09:24 -0800
+Processing by CohortController#index as HTML
+  [1m[35mCohort Load (0.4ms)[0m  SELECT "cohorts".* FROM "cohorts"
+  Rendered cohort/index.html.erb within layouts/application (1.7ms)
+  Rendered partials/_nav.html.erb (0.4ms)
+Completed 200 OK in 191ms (Views: 189.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:09:24 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:09:24 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:10:11 -0800
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:10:45 -0800
+Processing by CohortController#index as HTML
+  [1m[36mCohort Load (0.7ms)[0m  [1mSELECT "cohorts".* FROM "cohorts"[0m
+  Rendered cohort/index.html.erb within layouts/application (8.1ms)
+  Rendered partials/_nav.html.erb (1.3ms)
+Completed 200 OK in 335ms (Views: 327.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/application.self-8517d9b81a15dfc6c84a0ba1de6a9c5d2734ad2a287464feb1a9b67670741a30.css?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/d3.self-de547d79079192efe0f56942aa0b304a1454067e9d216303f9859536532034e3.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/c3.min.self-3ac8e330bb1d49c193d59a40d103d487f577fd4801900c784550b103fd55c517.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/cohort.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/student.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:10:46 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:10:47 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:10:47 -0800
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:12:27 -0800
+Processing by CohortController#index as HTML
+  [1m[35mCohort Load (0.7ms)[0m  SELECT "cohorts".* FROM "cohorts"
+  Rendered cohort/index.html.erb within layouts/application (17.7ms)
+  Rendered partials/_nav.html.erb (0.1ms)
+Completed 200 OK in 400ms (Views: 391.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/application.self-8517d9b81a15dfc6c84a0ba1de6a9c5d2734ad2a287464feb1a9b67670741a30.css?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/d3.self-de547d79079192efe0f56942aa0b304a1454067e9d216303f9859536532034e3.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/c3.min.self-3ac8e330bb1d49c193d59a40d103d487f577fd4801900c784550b103fd55c517.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/student.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/cohort.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-19 12:12:28 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/d3.self-de547d79079192efe0f56942aa0b304a1454067e9d216303f9859536532034e3.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/c3.min.self-3ac8e330bb1d49c193d59a40d103d487f577fd4801900c784550b103fd55c517.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/cohort.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/student.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:12:29 -0800
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:13:10 -0800
+Processing by CohortController#index as HTML
+  [1m[36mCohort Load (0.3ms)[0m  [1mSELECT "cohorts".* FROM "cohorts"[0m
+  Rendered cohort/index.html.erb within layouts/application (2.5ms)
+  Rendered partials/_nav.html.erb (0.1ms)
+Completed 200 OK in 147ms (Views: 145.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-8517d9b81a15dfc6c84a0ba1de6a9c5d2734ad2a287464feb1a9b67670741a30.css?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/d3.self-de547d79079192efe0f56942aa0b304a1454067e9d216303f9859536532034e3.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/c3.min.self-3ac8e330bb1d49c193d59a40d103d487f577fd4801900c784550b103fd55c517.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/cohort.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/student.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:13:11 -0800
+
+
+Started GET "/cohort/1/show" for ::1 at 2015-12-19 12:13:15 -0800
+Processing by CohortController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCohort Load (0.5ms)[0m  SELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (3.0ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."cohort_id" = $1[0m  [["cohort_id", 1]]
+  Rendered cohort/show.html.erb within layouts/application (14.2ms)
+  Rendered partials/_nav.html.erb (0.4ms)
+Completed 200 OK in 255ms (Views: 167.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/cohort/2/show" for ::1 at 2015-12-19 12:13:19 -0800
+Processing by CohortController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCohort Load (0.4ms)[0m  SELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."cohort_id" = $1[0m  [["cohort_id", 2]]
+  Rendered cohort/show.html.erb within layouts/application (1.2ms)
+  Rendered partials/_nav.html.erb (0.0ms)
+Completed 200 OK in 158ms (Views: 155.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:13:53 -0800
+Processing by CohortController#index as HTML
+  [1m[35mCohort Load (0.4ms)[0m  SELECT "cohorts".* FROM "cohorts"
+  Rendered cohort/index.html.erb within layouts/application (2.3ms)
+  Rendered partials/_nav.html.erb (0.1ms)
+Completed 200 OK in 182ms (Views: 181.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-8517d9b81a15dfc6c84a0ba1de6a9c5d2734ad2a287464feb1a9b67670741a30.css?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/d3.self-de547d79079192efe0f56942aa0b304a1454067e9d216303f9859536532034e3.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/c3.min.self-3ac8e330bb1d49c193d59a40d103d487f577fd4801900c784550b103fd55c517.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/cohort.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/student.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:13:53 -0800
+
+
+Started GET "/cohort" for ::1 at 2015-12-19 12:14:20 -0800
+Processing by CohortController#index as HTML
+  [1m[36mCohort Load (0.3ms)[0m  [1mSELECT "cohorts".* FROM "cohorts"[0m
+  Rendered cohort/index.html.erb within layouts/application (2.4ms)
+  Rendered partials/_nav.html.erb (0.0ms)
+Completed 200 OK in 145ms (Views: 144.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-8517d9b81a15dfc6c84a0ba1de6a9c5d2734ad2a287464feb1a9b67670741a30.css?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/d3.self-de547d79079192efe0f56942aa0b304a1454067e9d216303f9859536532034e3.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/c3.min.self-3ac8e330bb1d49c193d59a40d103d487f577fd4801900c784550b103fd55c517.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/cohort.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/student.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/c3.min.css" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/assets/c3.min.js" for ::1 at 2015-12-19 12:14:21 -0800
+
+
+Started GET "/cohort/1/show" for ::1 at 2015-12-19 12:14:24 -0800
+Processing by CohortController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCohort Load (0.3ms)[0m  SELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."cohort_id" = $1[0m  [["cohort_id", 1]]
+  Rendered cohort/show.html.erb within layouts/application (1.0ms)
+  Rendered partials/_nav.html.erb (0.1ms)
+Completed 200 OK in 147ms (Views: 144.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cohort/2/show" for ::1 at 2015-12-19 12:14:27 -0800
+Processing by CohortController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCohort Load (0.3ms)[0m  SELECT  "cohorts".* FROM "cohorts" WHERE "cohorts"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."cohort_id" = $1[0m  [["cohort_id", 2]]
+  Rendered cohort/show.html.erb within layouts/application (0.8ms)
+  Rendered partials/_nav.html.erb (0.1ms)
+Completed 200 OK in 144ms (Views: 141.6ms | ActiveRecord: 0.5ms)

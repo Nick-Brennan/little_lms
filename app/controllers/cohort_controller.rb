@@ -2,7 +2,7 @@ class CohortController < ApplicationController
 
 
 def index
-	@cohort = Cohort.find(params[:id])
+	@cohorts = Cohort.all()
 	render :index
 end
 
