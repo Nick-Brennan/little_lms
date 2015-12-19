@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :teachers
   root to: "welcome#index"
+
   get 'cohort', to: "cohort#index", as:"cohort"
   get 'cohort/:id/show', to: "cohort#show", as: "cohort_show"
   get 'cohort/:id/data', to: "cohort#data", as: "cohor_data"

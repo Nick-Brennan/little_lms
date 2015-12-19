@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'd3js-rails', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-sass', '~> 3.3.6'
-
+gem 'devise'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
