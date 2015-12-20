@@ -3,6 +3,19 @@
 	<title></title>
 </head>
 <body>
-Student Show Page
+<div class="container-fluid">
+<h1><%= @student.name %> <%=@student.id%></h1>
+<hr>
+	<li><h3><%= link_to "GitHub",  "http://github.com/#{@student.github_username}" %></h3></li>
+<div>
+	<%= form_for @student, url: "/student/#{@student.id}/edit", :method => "post" do  |f| %>
+						<%= f.text_field :name, :placeholder => "name" %><br>
+						<%= f.text_field :github_username, :placeholder => "GitHub Name" %><br>
+						<%= f.number_field :cohort_id, :placeholder =>  @student.cohort_id  %>
+						<%= f.submit "Update Student" %>
+					<% end %>
+<div>
+</div>
+
 </body>
 </html>
