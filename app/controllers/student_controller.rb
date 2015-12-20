@@ -2,6 +2,7 @@ class StudentController < ApplicationController
 
 def show
 	@student = Student.find(params[:id])
+	@projects = @student.projects
 	render :show
 end
 
