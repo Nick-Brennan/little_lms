@@ -47,6 +47,15 @@ def attendance_log
 	# will write a check for :sid == "all" to update all students
 end
 
+def studentsShow
+	@student = Student.new
+	klass = Cohort.find(params[:id])
+	@cohort_id = klass.id
+	@cohort = klass.students
+	render :studentsShow
+end
+
+
 
 
 end
