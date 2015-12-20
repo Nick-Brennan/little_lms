@@ -8,6 +8,15 @@
 	<h1><%=@klass.subject%> <%=@klass.name%></h1>
 	<hr>
 	<h2> Class Attendance </h2>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4" style="text-align: center;">
+			<button class="btn"><%= link_to "Students", "/cohort/#{@klass.id}/students/show"%></button>
+			<button class="btn"><%= link_to "Attendance", "/cohort/#{@klass.id}/attendance"%></button>
+			<button class="btn"><%= link_to "Projects", "/cohort/#{@klass.id}/projects"%></button>
+		</div>
+	</div>
+	<hr>
 	<div class="chart">
 		<div id="chart" class="c3"></div>
 	</div>
@@ -15,6 +24,8 @@
 	<div class="compChart">
 		<div id="compChart" class="c3"></div>
 	</div>
+	<hr>
+
 </div>
 </body>
 </html>
