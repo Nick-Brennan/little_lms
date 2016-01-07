@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   post 'cohort/:id/student/new', to: "student#new"
   post 'student/:id/edit', to: "student#edit"
   get 'cohort/archived', to: "cohort#archived"
+  post 'archive', to: "cohort#toggle_archive"
 end

@@ -2,7 +2,8 @@ class CohortController < ApplicationController
 
 
 def index
-	@cohorts = Cohort.where({:archived => false || nil})
+	@cohorts = Cohort.where({:archived => [false, nil]})
+	p @cohorts
 	@cohort = Cohort.new
 	render :index
 end
@@ -59,7 +60,17 @@ def archived
 	@cohorts = Cohort.where({:archived => true})
 end
 
-
+def toggle_archive
+	p params[:id]
+	cohort = Cohort.find(params[:id])
+	p cohort
+	if(cohort.archived != nil)
+		cohort.archived = !cohort.archived
+		p cohort
+		cohort.save
+	end	
+	render :js => "location.reload();"
+end
 
 
 end

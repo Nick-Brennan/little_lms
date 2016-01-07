@@ -7,7 +7,7 @@
 # Homework.create(name: 'assignment_1', student: students.first)
 # teachers = Teacher.create([{ name: 'Justin', cohort_name: '24'}, { name: 'Nathan', cohort_name: '24'}, { name: 'NewGuy', cohort_name: '24'}])
 # Project.create([{name: 'sex in airport bathrooms'}])
-Cohort.create({name: '77', archived: true})
+Cohort.create({name: '77', archived: false})
 
 
 
