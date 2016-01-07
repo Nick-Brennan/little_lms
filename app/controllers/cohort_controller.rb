@@ -2,7 +2,7 @@ class CohortController < ApplicationController
 
 
 def index
-	@cohorts = Cohort.all()
+	@cohorts = Cohort.where({:archived => false || nil})
 	@cohort = Cohort.new
 	render :index
 end
