@@ -9,8 +9,11 @@
 	<li><h3><%= link_to "GitHub",  "http://github.com/#{@student.github_username}" %></h3></li>
 <div>
 	<%= form_for @student, url: "/student/#{@student.id}/edit", :method => "post" do  |f| %>
+						<%= f.label :name %>
 						<%= f.text_field :name, :placeholder => "name" %><br>
+						<%= f.label :github_username, 'Github Username' %>
 						<%= f.text_field :github_username, :placeholder => "GitHub Name" %><br>
+						<%= f.label :cohort_id %>
 						<%= f.number_field :cohort_id, :placeholder =>  @student.cohort_id  %>
 						<%= f.submit "Update Student" %>
 					<% end %>
