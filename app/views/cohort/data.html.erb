@@ -3,6 +3,11 @@
 	<title></title>
 </head>
 <body>
+<%= javascript_tag do %>
+  window.canvasHeight = '<%= j @height %>';
+  window.canvasWidth = '<%= j @width %>';
+<% end %>
+  
 	<div class="container-fluid">
 <h1>Cohort Data Page</h1>
 <hr>
