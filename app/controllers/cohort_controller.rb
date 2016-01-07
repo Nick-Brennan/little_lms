@@ -56,7 +56,7 @@ def studentsShow
 end
 
 def archived
-	@cohorts = Cohort.wher({:archived => true})
+	@cohorts = Cohort.where({:archived => true})
 end
 
 
