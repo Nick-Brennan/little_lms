@@ -28,4 +28,5 @@ class StudentController < ApplicationController
 		redirect_to "/student/#{params[:id]}/show"
 	end
 
+
 end
