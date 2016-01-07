@@ -21,7 +21,7 @@ def new
  	  student = Student.create(student_params)
       redirect_to "/student/#{student.id}/show"
   end
-
+  
 def edit 
 	student_params = params.require(:student).permit(:cohort_id, :github_username, :name)
 	Student.update(params[:id], student_params )
