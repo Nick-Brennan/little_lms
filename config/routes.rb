@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get 'cohort/:id/students/show', to: "cohort#studentsShow"
   post 'cohort/:id/student/new', to: "student#new"
   post 'student/:id/edit', to: "student#edit"
+  get 'cohort/archived', to: "cohort#archived"
 end

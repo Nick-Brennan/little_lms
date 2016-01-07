@@ -55,6 +55,10 @@ def studentsShow
 	render :studentsShow
 end
 
+def archived
+	@cohorts = Cohort.wher({:archived => true})
+end
+
 
 
 
