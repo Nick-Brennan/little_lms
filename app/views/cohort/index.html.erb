@@ -7,13 +7,13 @@
 	<h1> Available Cohorts </h1>
 	<ul> 
 		<% @cohorts.each do |cohort| %>
-		<li><h2><%=link_to "Cohort #{cohort.name}", cohort_show_path(cohort.id), :"data-no-turbolink" => true %> <%=  check_box_tag "#{cohort.id}"%></h2></li>
+		<li><h2><%=link_to "Cohort #{cohort.name} - #{cohort.subject}", cohort_show_path(cohort.id), :"data-no-turbolink" => true %> <%=  check_box_tag "#{cohort.id}"%></h2></li>
 		<%end%>
 	</ul>
 	<div>
 		<%= form_for @cohort, url: "/cohort/new" do  |f| %>
 						<%= f.text_field :name, :placeholder => "Cohort Number" %><br>
-						<%= f.text_area :subject, :placeholder => "Cohort Type" %><br>
+						<%= f.select :subject, [["UXDI", "UXDI"], ["WDI", "WDI"], ["PMI", "PMI"], ["FEWD", "FEWD"], ["BEWD", "BEWD"]]%><br>
 						<%= f.submit "Add cohort" %>
 					<% end %>
 	</div>
