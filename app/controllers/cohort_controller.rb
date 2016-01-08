@@ -10,6 +10,7 @@ end
 
 def new
       cohort_params = params.require(:cohort).permit(:name, :subject)
+      cohort_params[:archived] = false
       p cohort_params
  	  cohort = Cohort.create(cohort_params)
       redirect_to "/cohort/#{cohort.id}/show"
