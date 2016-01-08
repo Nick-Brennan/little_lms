@@ -17,9 +17,14 @@ end
 
 def show
 	@klass = Cohort.find(params[:id])
-	@attendance_data = @klass.attendances
+	@present = []
+	@absent = []
 	@cohort_id = @klass.id
 	@cohort = @klass.students
+	@cohort.each do |stu|
+		 @absent.push(stu.attendances.where({present: -1}).count)
+		 @present.push(stu.attendances.where({present: 1}).count)
+	end
 	render :show
 end
 
@@ -59,7 +64,6 @@ end
 def archived
 	@cohorts = Cohort.where({:archived => true})
 end
-
 
 
 

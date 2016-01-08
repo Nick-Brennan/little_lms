@@ -4,10 +4,10 @@
 </head>
 <body>
 <%= javascript_tag do %>
-  window.canvasHeight = '<%= j @height %>';
-  window.canvasWidth = '<%= j @width %>';
+  window.presentData = '<%= j @present %>';
+  window.absentData = '<%= j @absent %>';
 <% end %>
-  
+
 	<div class="container-fluid">
 <h1>Cohort Data Page</h1>
 <hr>
@@ -61,8 +61,8 @@ var chart = c3.generate({
     		window.location= "/student/1/show"
     	},
         columns: [
-            ['data1', 30, 200, 100, 400, 150, 250],
-            ['data2', 130, 100, 140, 200, 150, 50]
+            window.presentData,
+            window.absentData
         ],
         type: 'bar'
     },

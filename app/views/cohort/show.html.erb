@@ -4,6 +4,10 @@
 	<script type="text/javascript"></script>
 </head>
 <body>
+	<%= javascript_tag do %>
+  window.presentData = JSON.parse('<%=  @present %>');
+  window.absentData = JSON.parse('<%=  @absent %>');
+<% end %>
 <div class="container-fluid">
 	<h1><%=@klass.subject%> <%=@klass.name%></h1>
 	<hr>

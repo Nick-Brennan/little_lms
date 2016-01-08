@@ -1,13 +1,21 @@
 $(function(){
+	presentData = window.presentData
+	absentData = window.absentData
+	presentData.unshift('present')
+	absentData.unshift('absent')
+	console.log(presentData)
 	var chart = c3.generate({
 	    bindto: '#chart',
 	    data: {
+	    	x: 'x',
 	    	onclick: function(d, element) {
 	    		window.location= "/student/1/show"
 	    	},
 	        columns: [
-	            ['data1', 30, 200, 100, 400, 150, 250],
-	            ['data2', 130, 100, 140, 200, 150, 50]
+
+	        	['x', "student1", "student2"],
+	            presentData,
+	            absentData
 	        ],
 	        type: 'bar'
 	    },
@@ -17,16 +25,21 @@ $(function(){
 	        }
 	        // or
 	        //width: 100 // this makes bar width 100px
-	    }
+	    },
+	    axis: {
+        x: {
+            type: 'category' // this needed to load string x value
+        }
+    }
 	});
 
-	setTimeout(function () {
-	    chart.load({
-	        columns: [
-	            ['data3', 130, -150, 200, 300, -200, 100]
-	        ]
-	    });
-	}, 1000);
+	// setTimeout(function () {
+	//     chart.load({
+	//         columns: [
+	//             ['data3', 130, -150, 200, 300, -200, 100]
+	//         ]
+	//     });
+	// }, 1000);
 
 	var mychart = c3.generate({
 		bindto: '#compChart',
