@@ -7,6 +7,7 @@
 	<%= javascript_tag do %>
   window.presentData = JSON.parse('<%=  @present %>');
   window.absentData = JSON.parse('<%=  @absent %>');
+  window.students = '<%= @students %>';
 <% end %>
 <div class="container-fluid">
 	<h1><%=@klass.subject%> <%=@klass.name%></h1>

@@ -21,12 +21,16 @@ def show
 	@klass = Cohort.find(params[:id])
 	@present = []
 	@absent = []
+	@students = 'x,'
 	@cohort_id = @klass.id
 	@cohort = @klass.students
 	@cohort.each do |stu|
 		 @absent.push(stu.attendances.where({present: -1}).count)
 		 @present.push(stu.attendances.where({present: 1}).count)
+		 @students = @students + "#{stu.name},"
 	end
+	p @present
+	p @students
 	render :show
 end
 

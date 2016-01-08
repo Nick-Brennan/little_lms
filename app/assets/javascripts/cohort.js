@@ -1,9 +1,11 @@
 $(function(){
 	presentData = window.presentData
 	absentData = window.absentData
+	students = window.students
+	students = students.split(',')
+	students.pop(students.length -1)
 	presentData.unshift('present')
 	absentData.unshift('absent')
-	console.log(presentData)
 	var chart = c3.generate({
 	    bindto: '#chart',
 	    data: {
@@ -13,7 +15,7 @@ $(function(){
 	    	},
 	        columns: [
 
-	        	['x', "student1", "student2"],
+	        	students,
 	            presentData,
 	            absentData
 	        ],
