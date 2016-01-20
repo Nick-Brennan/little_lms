@@ -3,9 +3,16 @@ $(function(){
 	presentData = window.presentData
 	absentData = window.absentData
 	students = window.students
-	students = students.split(',')
-	students.pop(students.length -1)
+	if(students === undefined){
+		return;
+	}
+	students = students.split(',');
+	students.pop(students.length -1);
+
+
 	presentData.unshift('present')
+
+
 	absentData.unshift('absent')
 	hwNames = [];
 	hwComps = ['self assessment'];
