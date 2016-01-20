@@ -18,7 +18,7 @@ $(function(){
 	    data: {
 	    	x: 'x',
 	    	onclick: function(d, element) {
-	    		window.location= "/student/1/show"
+	    		// window.location= "/student/1/show"
 	    	},
 	        columns: [
 
