@@ -24,6 +24,7 @@ def show
 	@students = 'x,'
 	@cohort_id = @klass.id
 	@cohort = @klass.students
+	@averageComp = totalAverageComp(@cohort)
 	@cohort.each do |stu|
 		 @absent.push(stu.attendances.where({present: -1}).count)
 		 @present.push(stu.attendances.where({present: 1}).count)
@@ -31,6 +32,7 @@ def show
 	end
 	p @present
 	p @students
+	p @averageComp
 	render :show
 end
 
@@ -82,5 +84,40 @@ def toggle_archive
 	end	
 	render :js => "location.reload();"
 end
+
+def averageComp(cohort, name)
+	total = 0
+	count = 0
+	cohort.each do |stu|
+		stu.homeworks.where(:name => name).each do |t|
+			total += t.self_assessment
+			count += 1
+		end
+	end
+		if count == 0
+			return "no submissions"
+		else
+		result = total / count
+		result
+	end
+end
+
+def totalAverageComp(cohort) 
+	hwNames = []
+	namesAndComp = []
+	Homework.select("DISTINCT name").each do |t|
+		hwNames.push(t.name)
+	end
+	hwNames.each do |t|
+		result = averageComp(cohort, t)
+		unless result == "no submissions"
+			namesAndComp << t 
+			namesAndComp << result
+		end
+	end
+	namesAndComp
+	end
+
+
 
 end

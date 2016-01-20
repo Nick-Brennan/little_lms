@@ -5,9 +5,11 @@
 </head>
 <body>
 	<%= javascript_tag do %>
+	window.averageComp = JSON.parse('<%= @averageComp %>'.replace(/&quot;/g,'"'));
   window.presentData = JSON.parse('<%=  @present %>');
   window.absentData = JSON.parse('<%=  @absent %>');
   window.students = '<%= @students %>';
+
 <% end %>
 <div class="container-fluid">
 	<h1><%=@klass.subject%> <%=@klass.name%></h1>
