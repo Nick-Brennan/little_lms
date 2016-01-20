@@ -67,7 +67,7 @@ def attendance_log
 		att_params[:cohort_id] = @cohort
 		att_params[:student_id] = student
 		att_params[:date] = params[:date]
-		if(@present.include?(student))
+		if(@present != nil && @present.include?(student))
 			att_params[:present] = 1
 		else
 			att_params[:present] = -1
