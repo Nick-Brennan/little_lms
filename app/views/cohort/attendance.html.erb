@@ -1,12 +1,12 @@
 <html>
 <head>
 	<title></title>
+
 </head>
 <body>
  <div class="container-fluid">
 <h1>cohort attendance page</h1>
- <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" placeholder="12-01-2015">
-<button type="button" class="btn btn-success">All Here</button>
+ <input type="date" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" placeholder="12-01-2015">
 <ul>
 <% @cohort.each do |student|%>
 <li>
@@ -15,17 +15,20 @@
 			<h3><%= link_to "#{student.name}", "/student/#{student.id}/show"%></h3> 
 		</div>
 		<div class="col-md-4">
+			<input type="checkbox">
 			<!-- mock up button that will change color. -->
-			<button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-ok"></span></a>
+			<!-- <button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-ok"></span></a>
 			</button>
 			<button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-remove"></span></a>
-			</button>
+			</button> -->
 		</div>
 		<div class="col-md-4">
 		</div>
 	</div>
 </li>
 <% end %>
+<button type="button" class="btn btn-success" id="allHere" onclick="allHere()">All Here</button>
+<button type="button" class="btn btn-success" id="submit" onclick="submit()">Submit</button>
 </ul>
 </div>
 </body>
