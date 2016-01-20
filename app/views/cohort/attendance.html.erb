@@ -6,29 +6,30 @@
 <body>
  <div class="container-fluid">
 <h1>cohort attendance page</h1>
+<%=form_tag '/attendance' do %>
  <input type="date" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" placeholder="12-01-2015">
 <ul>
-<% @cohort.each do |student|%>
-<li>
-	<div class="row">
-		<div class="col-md-4">
-			<h3><%= link_to "#{student.name}", "/student/#{student.id}/show"%></h3> 
-		</div>
-		<div class="col-md-4">
-			<input type="checkbox">
-			<!-- mock up button that will change color. -->
-			<!-- <button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-ok"></span></a>
-			</button>
-			<button type="button" class="btn btn-success"><a><span class="glyphicon glyphicon-remove"></span></a>
-			</button> -->
-		</div>
-		<div class="col-md-4">
-		</div>
-	</div>
-</li>
+
+	<% @cohort.each do |student|%>
+		<li>
+			<div class="row">
+				<div class="col-md-4">
+					<h3><%= link_to "#{student.name}", "/student/#{student.id}/show"%></h3> 
+				</div>
+				<div class="col-md-4">
+					<%=check_box_tag 'present_students[]', student.id %>					
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+		</li>
+		<%= hidden_field_tag 'all_students[]', student.id %>
+	<% end %>
+	<%= submit_tag "submit", class: "btn btn-info"%>
+	<%= hidden_field_tag 'cohort', @cohort_id %>
 <% end %>
-<button type="button" class="btn btn-success" id="allHere" onclick="allHere()">All Here</button>
-<button type="button" class="btn btn-success" id="submit" onclick="submit()">Submit</button>
+<button type="button" class="btn btn-success" id="allHere">All Here</button>
+
 </ul>
 </div>
 </body>

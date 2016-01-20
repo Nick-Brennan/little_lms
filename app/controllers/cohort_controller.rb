@@ -57,6 +57,24 @@ def attendance_log
 	# at this route params[:id] will be cohort_id 
 	# params[:sid] will be student_id
 	# will write a check for :sid == "all" to update all students
+	p params[:present]
+	@present = params[:present_students]
+	@all = params[:all_students]
+
+	@cohort = params[:cohort]
+	@all.each do |student|
+		att_params = {}
+		att_params[:cohort_id] = @cohort
+		att_params[:student_id] = student
+		att_params[:date] = params[:date]
+		if(@present.include?(student))
+			att_params[:present] = 1
+		else
+			att_params[:present] = -1
+		end	
+		Attendance.create(att_params)
+	end	
+	redirect_to "/cohort/#{@cohort}/show"
 end
 
 def studentsShow
