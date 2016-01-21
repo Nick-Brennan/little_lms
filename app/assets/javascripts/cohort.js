@@ -1,17 +1,35 @@
 $(function(){
+	averageComp = window.averageComp
 	presentData = window.presentData
 	absentData = window.absentData
 	students = window.students
-	students = students.split(',')
-	students.pop(students.length -1)
+	if(students === undefined){
+		return;
+	}
+	students = students.split(',');
+	students.pop(students.length -1);
+
+
 	presentData.unshift('present')
+
+
 	absentData.unshift('absent')
+	hwNames = [];
+	hwComps = ['self assessment'];
+	for (var i = 0; i < averageComp.length; i ++) {
+		if(i % 2 == 0){
+			hwNames.push(averageComp[i])
+		}else{
+			hwComps.push(parseFloat(averageComp[i]))
+		}
+	} 
+
 	var chart = c3.generate({
 	    bindto: '#chart',
 	    data: {
 	    	x: 'x',
 	    	onclick: function(d, element) {
-	    		window.location= "/student/1/show"
+	    		// window.location= "/student/1/show"
 	    	},
 	        columns: [
 
@@ -46,19 +64,14 @@ $(function(){
 	var mychart = c3.generate({
 		bindto: '#compChart',
 	    data: {
+	    	
 	    	//hardcoded redirect to test, will have to make dynamic
 	    	onclick: function(d, element) {
 	    		window.location= "/cohort/1/homework/1/show"
 	    	},
-	        xs: {
-	            'data1': 'x1',
-	            'data2': 'x2',
-	        },
+	        
 	        columns: [
-	            ['x1', 10, 30, 45, 50, 70, 100],
-	            ['x2', 30, 50, 75, 100, 120],
-	            ['data1', 30, 200, 100, 400, 150, 250],
-	            ['data2', 20, 180, 240, 100, 190]
+	        	hwComps
 	        ]
 	    }
 	});

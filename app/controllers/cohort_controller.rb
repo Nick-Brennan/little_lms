@@ -24,6 +24,7 @@ def show
 	@students = 'x,'
 	@cohort_id = @klass.id
 	@cohort = @klass.students
+	@averageComp = totalAverageComp(@cohort)
 	@cohort.each do |stu|
 		 @absent.push(stu.attendances.where({present: -1}).count)
 		 @present.push(stu.attendances.where({present: 1}).count)
@@ -31,6 +32,7 @@ def show
 	end
 	p @present
 	p @students
+	p @averageComp
 	render :show
 end
 
@@ -57,6 +59,24 @@ def attendance_log
 	# at this route params[:id] will be cohort_id 
 	# params[:sid] will be student_id
 	# will write a check for :sid == "all" to update all students
+	p params[:present]
+	@present = params[:present_students]
+	@all = params[:all_students]
+
+	@cohort = params[:cohort]
+	@all.each do |student|
+		att_params = {}
+		att_params[:cohort_id] = @cohort
+		att_params[:student_id] = student
+		att_params[:date] = params[:date]
+		if(@present != nil && @present.include?(student))
+			att_params[:present] = 1
+		else
+			att_params[:present] = -1
+		end	
+		Attendance.create(att_params)
+	end	
+	redirect_to "/cohort/#{@cohort}/show"
 end
 
 def studentsShow
@@ -82,5 +102,40 @@ def toggle_archive
 	end	
 	render :js => "location.reload();"
 end
+
+def averageComp(cohort, name)
+	total = 0
+	count = 0
+	cohort.each do |stu|
+		stu.homeworks.where(:name => name).each do |t|
+			total += t.self_assessment
+			count += 1
+		end
+	end
+		if count == 0
+			return "no submissions"
+		else
+		result = total / count
+		result
+	end
+end
+
+def totalAverageComp(cohort) 
+	hwNames = []
+	namesAndComp = []
+	Homework.select("DISTINCT name").each do |t|
+		hwNames.push(t.name)
+	end
+	hwNames.each do |t|
+		result = averageComp(cohort, t)
+		unless result == "no submissions"
+			namesAndComp << t 
+			namesAndComp << result
+		end
+	end
+	namesAndComp
+	end
+
+
 
 end
