@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'cohort', to: "cohort#index", as:"cohort"
   get 'cohort/:id/show', to: "cohort#show", as: "cohort_show"
-  get 'cohort/:id/data', to: "cohort#data", as: "cohor_data"
+  get 'cohort/:id/data', to: "cohort#data", as: "cohort_data"
   get 'cohort/:id/attendance', to: "cohort#attendance" , as: "cohort_att"
   get 'cohort/:id/homework/:hid/show', to: "cohort#homework", as: "cohort_hw"
   get 'student/:id/show', to: "student#show"
